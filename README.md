@@ -1,4 +1,7 @@
 # community-grid
+
+Live demo: [https://tairea.github.io/community-grid](https://tairea.github.io/community-grid)
+
 This concept came out of a discussion I had with someone at [DwebCamp2022](https://dwebcamp.org/people/).
 
 The idea being that all conference or community participants could enter their interests and projects before physically meeting up and the Community Grid A.I. would recommend 4 people each participant should meet based on the info they provided.
