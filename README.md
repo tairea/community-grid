@@ -1,6 +1,6 @@
 # community-grid
 
-Live demo: [https://tairea.github.io/community-grid](https://tairea.github.io/community-grid)
+**Live demo:** [https://tairea.github.io/community-grid](https://tairea.github.io/community-grid)
 
 This concept came out of a discussion I had with someone at [DwebCamp2022](https://dwebcamp.org/people/).
 
