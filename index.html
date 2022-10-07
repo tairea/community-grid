@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="mynetwork"></div>
+    <p class="title">Community Grid</p>
+
+    <script type="text/javascript">
+      let dwebParticipants = [
+        "Aditi_Shah_uj1WVtF.thumbnail.jpg",
+        "Alexis_Rossi.thumbnail.png",
+        "AliceYuanZhang.thumbnail.jpg",
+        "Alicia_Urquidi_Díaz.thumbnail.jpg",
+        "Alison_McCauley.thumbnail.jpg",
+        "Amelia_Winger-Bearskin.thumbnail.jpg",
+        "Ana_Jamborcic.thumbnail.png",
+        "Anastasia_Uglova.thumbnail.jpg",
+        "Andi_Wong.thumbnail.jpg",
+        "Andy_Tudhope.thumbnail.jpg",
+        "Antoine_McGrath.thumbnail.jpg",
+        "Benedict_Lau.thumbnail.jpg",
+        "Benson_Tilya_Tanzania.thumbnail.jpg",
+        "Brad_DeGraf.thumbnail.jpg",
+        "Brady_Gill.thumbnail.png",
+        "Brewster_5TkCszk_jwsc7V9.thumbnail.png",
+        "Bryan-Newbold.thumbnail.jpg",
+        "Carol_Xu.thumbnail.jpg",
+        "Catherine_Stihler.thumbnail.jpeg",
+        "Charlton.Lee_Bc6nbaa.thumbnail.jpeg",
+        "Christopher_Lejeune_head_shot_2.thumbnail.jpeg",
+        "Claire_Kelley_headshot.thumbnail.jpg",
+        "Dana_Beltran.thumbnail.png",
+        "Donatas_Grinkas.thumbnail.jpeg",
+        "Eleanor_Deverell.thumbnail.jpg",
+        "Emaline_Friedman.thumbnail.jpeg",
+        "Emily-Jacobi.thumbnail.jpg",
+        "Erik_Duemig.thumbnail.jpeg",
+        "ErikaOba_HeadShot.thumbnail.jpeg",
+        "Ese_Ojo.thumbnail.jpeg",
+        "Glitch_Taylor.thumbnail.png",
+        "Golda_Velez.thumbnail.png",
+        "Hannah_Howard.thumbnail.jpg",
+        "Headshot.thumbnail.jpg",
+        "IMG-6770_1.thumbnail.jpg",
+        "Ian_Davis.thumbnail.jpg",
+        "Iryna-Nezhynska.thumbnail.png",
+        "Jackson_Morgan.thumbnail.png",
+        "Jamie_Klinger.thumbnail.jpeg",
+        "Jared_Grippe.thumbnail.jpg",
+        "Jay_Carpenter.thumbnail.jpg",
+        "Jeffrey_Ventrella.thumbnail.png",
+        "Jim_Fournier.thumbnail.jpg",
+        "Joachim_Lohkamp.thumbnail.jpg",
+        "John_Ryan.thumbnail.jpg",
+        "JonathanDotan.thumbnail.jpg",
+        "Kaliya_Young.thumbnail.jpg",
+        "Kelsey_Breseman.thumbnail.jpg",
+        "Matthew_Schutte.thumbnail.jpg",
+        "Megan_Wong_Headshot.thumbnail.png",
+        "Rae_McKelvey_tDDyzuL.thumbnail.jpeg",
+        "Rhona_ONeill.thumbnail.jpeg",
+        "Screenshot_2022-07-28_at_13.54.53.thumbnail.png",
+        "Stefan_Magdalinski.thumbnail.jpg",
+        "Surya_Kramer_.thumbnail.jpg",
+        "Tatsuya_Sato.thumbnail.jpg",
+        "Taylor_Ferrari.thumbnail.png",
+        "Vaipunu_Ian_Tairea.thumbnail.jpeg",
+        "Wesley_Finck.thumbnail.jpg",
+        "Will_Howes.thumbnail.jpg",
+        "Willem_Wyndham.thumbnail.jpg",
+        "Yalor_Mewn.thumbnail.png",
+        "Young_Wong.thumbnail.jpeg",
+        "abhik_chowdhury.thumbnail.jpg",
+        "adam_uhlir.thumbnail.jpg",
+        "ajay_tallam.thumbnail.jpg",
+        "alex_poor.thumbnail.png",
+        "alex_randaccio.thumbnail.jpg",
+        "alexander_cobleigh.thumbnail.png",
+        "allison_duettman.thumbnail.png",
+        "amir_esfahani.thumbnail.jpg",
+        "amy_zhang.thumbnail.jpeg",
+        "andrew_chou.thumbnail.png",
+        "anna-tumadottir.thumbnail.jpg",
+        "antu_cuadrada.thumbnail.png",
+        "arkidiy_F6LmlSE.thumbnail.jpg",
+        "asha_veeraswamy.thumbnail.jpg",
+        "b_cavello.thumbnail.png",
+        "barry_threw.thumbnail.jpg",
+        "bear33.thumbnail.jpg",
+        "ben_goering.thumbnail.png",
+        "ben_kreith_l8SCyCU.thumbnail.jpeg",
+        "bert_muthalaly.thumbnail.jpeg",
+        "bogdana_rakova.thumbnail.jpg",
+        "brandon.king_SBAlZ6F.thumbnail.jpg",
+        "brian_eggert.thumbnail.jpg",
+        "calum_bowden_OKUrjat.thumbnail.jpeg",
+        "cel-300.thumbnail.jpg",
+        "cent_hosten.thumbnail.png",
+        "chris-lewis.thumbnail.jpeg",
+        "cody_harris.thumbnail.jpg",
+        "cynthia.thumbnail.jpeg",
+        "danny_obrien.thumbnail.jpg",
+        "deborah_tien.thumbnail.jpg",
+        "devin_ronneberg.thumbnail.png",
+        "divya_siddarth.thumbnail.jpg",
+        "dominick_marino.thumbnail.jpeg",
+        "dylan-reibling.thumbnail.jpg",
+        "eileen.thumbnail.jpeg",
+        "ellie_rennie.thumbnail.jpeg",
+        "esther_jang.thumbnail.jpg",
+        "gezelle_angela_corpus.thumbnail.png",
+        "grant_gallo.thumbnail.jpeg",
+        "guillem_cordoba.thumbnail.jpg",
+        "heather_vescent.thumbnail.jpg",
+        "hiure_queiroz.thumbnail.jpg",
+        "holmes_wilson.thumbnail.jpeg",
+        "isaac-headshot.thumbnail.jpg",
+        "jack_henderson.thumbnail.jpeg",
+        "jack_keen.thumbnail.jpg",
+        "jaime_villarreal_20220820.thumbnail.jpg",
+        "jessy_kate.thumbnail.jpg",
+        "john_hess.thumbnail.jpg",
+        "joshua_tan.thumbnail.jpg",
+        "joy_zhang.thumbnail.jpg",
+        "kahlil_Calavas.thumbnail.jpg",
+        "mai_sutton.thumbnail.jpeg",
+        "mikey_okbbfq_square.thumbnail.jpg",
+        "nicolas_pace.thumbnail.jpg",
+        "patrick_wu.thumbnail.jpg",
+        "riley_wong.jpg.thumbnail.jpeg",
+        "tania_silva.thumbnail.jpg",
+        "tb_dinesh.thumbnail.jpg",
+        "tony_lai.thumbnail.png",
+        "tracey_jaquith.thumbnail.jpeg",
+        "trav_fryer.thumbnail.jpeg",
+        "tyler_childs.thumbnail.jpg",
+        "victoria_ivanova.thumbnail.jpg",
+        "viktor_zaunders.thumbnail.jpg",
+        "wendy_hanamura_fj9Lk9N.thumbnail.jpg",
+        "ying_tong.thumbnail.jpg",
+        "yondon_fu.thumbnail.jpg",
+        "zarinah_agnew.thumbnail.jpg",
+      ];
+
+      // let numberOfPeople = Number(prompt("Enter number of people?"))
+      let numberOfPeople = dwebParticipants.length;
+
+      let peopleAcross = Number(prompt("Enter number of columns across?"));
+      // let peopleAcross = 10
+
+      let rows = Math.ceil(numberOfPeople / peopleAcross) + 1;
+
+      let y = 0;
+      let personNumber = 0;
+
+      console.log("rows = ", rows);
+
+      let nodePositions = [];
+
+      for (let row = 1; row <= rows; row++) {
+        for (
+          let i = 1;
+          i <= (row % 2 !== 0 ? peopleAcross : peopleAcross - 1);
+          i++
+        ) {
+          personNumber++;
+          // odd rows
+          if (row % 2 == 0) {
+            nodePositions.push({
+              id: personNumber,
+              label: String(personNumber),
+              x: i * 200,
+              y: y,
+              shape: "circularImage",
+              image: "./dweb-people/" + dwebParticipants[personNumber],
+            });
+          }
+          // even rows
+          else if (row % 2 !== 0) {
+            nodePositions.push({
+              id: personNumber,
+              label: String(personNumber),
+              x: i * 200 - 100,
+              y: y,
+              shape: "circularImage",
+              image: "./dweb-people/" + dwebParticipants[personNumber],
+            });
+          }
+        }
+        // end of row
+        y += 100;
+      }
+
+      console.log("nodePositions", nodePositions);
+
+      var nodes = new vis.DataSet(nodePositions);
+
+      let edgesTouching = [];
+
+      let center = peopleAcross + 1;
+
+      // half number of rows will be the number of rows with center nodes
+      for (let i = 0; i < Math.floor(rows / 2); i++) {
+        for (let n = 0; n < peopleAcross - 1; n++) {
+          // 1st petal
+          edgesTouching.push({
+            from: center + n,
+            to: center + n - peopleAcross,
+          });
+          edgesTouching.push({
+            from: center + n - peopleAcross,
+            to: center + n,
+          });
+          // 2nd petal
+          edgesTouching.push({
+            from: center + n,
+            to: center + n - peopleAcross + 1,
+          });
+          edgesTouching.push({
+            from: center + n - peopleAcross + 1,
+            to: center + n,
+          });
+          // 3rd petal
+          edgesTouching.push({
+            from: center + n,
+            to: center + n + peopleAcross,
+          });
+          edgesTouching.push({
+            from: center + n + peopleAcross,
+            to: center + n,
+          });
+          // 4th petal
+          edgesTouching.push({
+            from: center + n,
+            to: center + n + peopleAcross - 1,
+          });
+          edgesTouching.push({
+            from: center + n + peopleAcross - 1,
+            to: center + n,
+          });
+        }
+        center = center + (peopleAcross - 1) + peopleAcross;
+      }
+
+      console.log("edgesTouching", edgesTouching);
+
+      // create an array with edges
+      var edges = new vis.DataSet(edgesTouching);
+
+      // create a network
+      var container = document.getElementById("mynetwork");
+
+      // provide the data in the vis format
+      var data = {
+        nodes: nodes,
+        edges: edges,
+      };
+      var options = {
+        physics: {
+          //   enabled: true
+          enabled: false,
+        },
+        nodes: {
+          fixed: true,
+          color: {
+            background: "#fff",
+            border: "#777",
+          },
+        },
+        edges: {
+          physics: true,
+          smooth: {
+            enabled: true,
+            type: "vertical",
+            roundness: 0.5,
+          },
+          width: 2,
+          color: "#777",
+        },
+      };
+
+      // network mapping done with https://visjs.org/
+      var network = new vis.Network(container, data, options);
+    </script>
+  </body>
+</html>
