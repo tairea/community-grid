@@ -7,6 +7,6 @@ Kind of like an A.I. generated human scavenger hunt for conferences.
 
 Obviously the A.I. recommendation part hasnt been built because I'm not that smart.
 
-If you have some ideas of the logic to match participants based on their inputs, hit me up (Discord: vai-ian#0058).
+If you have some ideas of the logic to match 4 connections for each participant based on their inputs, and place them accordingly in this constrained grid format, hit me up (Discord: vai-ian#0058).
 
 ![screenshot](./screenshot.png)
