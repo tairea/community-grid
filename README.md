@@ -12,6 +12,6 @@ The A.I. recommendation part hasn't been built yet because I'm not that smart.
 
 If you have some ideas of the logic to match 4 connections for each participant based on their inputs, and place them accordingly in this constrained grid format, hit me up (Discord: vai-ian#0058).
 
-Ai is a bit easier to do now. The successor to this project is over here: [Working Group Prototype](https://github.com/tairea/working-group-cytoscape)
+Update: Ai is a bit easier to do now. The successor to this project is over here: [Working Group Prototype](https://github.com/tairea/working-group-cytoscape)
 
 ![screenshot](./screenshot.png)
